@@ -1,0 +1,99 @@
+﻿using System;
+using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Services;
+
+namespace AM.UI.Console
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //PArite 1
+            // Q7 : Constructeur non paramétré
+
+            /*Plane p1 = new Plane();
+
+            // Initialisation via les propriétés
+            p1.PlaneId = 1;
+            p1.Capacity = 180;
+            p1.ManufactureDate = new DateTime(2019, 6, 15);
+            p1.PlaneType = PlaneType.Airbus;
+
+            System.Console.WriteLine("Plane 1:");
+            System.Console.WriteLine(p1);
+
+            // Initialisation via l'initialiseur d'objet    
+            Plane p2 = new Plane
+            {
+                PlaneId = 1,
+                Capacity = 180,
+                ManufactureDate = new DateTime(2019, 6, 15),
+                PlaneType = PlaneType.Airbus
+            };
+
+            // Q8 Constructeur paramétré
+            Plane p3 = new Plane(PlaneType.Boing, 220, new DateTime(2015, 3, 20));
+            p3.PlaneId = 2;
+
+            System.Console.WriteLine("\nPlane 3:");
+            System.Console.WriteLine(p3);*/
+
+            //Partie 2
+            /*Passenger p = new Passenger { FirstName = "John", LastName = "Doe", EmailAddress = "john.doe@mail.com" };
+            Staff s = new Staff { FirstName = "Alice", LastName = "Smith", EmailAddress = "alice.smith@mail.com" };
+            Traveller t = new Traveller { FirstName = "Bob", LastName = "Brown", EmailAddress = "bob.brown@mail.com" };
+
+            // Test polymorphisme par héritage
+            System.Console.WriteLine("=== PassengerType() Test ===");
+            p.PassengerType();
+            s.PassengerType();
+            t.PassengerType();
+
+            // Test polymorphisme par signature
+            System.Console.WriteLine("\n=== CheckProfile() Test ===");
+            System.Console.WriteLine(p.CheckProfile("John", "Doe")); // True
+            System.Console.WriteLine(p.CheckProfile("John", "Doe", "john.doe@mail.com")); // True
+            Passenger p2 = new Passenger { FirstName = "John", LastName = "Doe", EmailAddress = "john.doe@mail.com", BirthDate = new DateTime(1990, 1, 1) };
+            System.Console.WriteLine(p.CheckProfile(p2)); */
+
+            // Partie 2 -III
+            // Création du service
+             FlightMethods fm = new FlightMethods();
+             fm.Flights = TestData.listFlights;
+
+            // // 1. Dates des vols vers Paris (for)
+            // var datesParis = fm.GetFlightDates("Paris");
+            // System.Console.WriteLine("Flight dates to Paris (for):");
+            // foreach (var date in datesParis)
+            // {
+            //     System.Console.WriteLine(date);
+            // }
+
+            // // 2. Dates des vols vers Paris (foreach)
+            // var datesParis2 = fm.GetFlightDatesForeach("Paris");
+            // System.Console.WriteLine("\nFlight dates to Paris (foreach):");
+            // foreach (var date in datesParis2)
+            // {
+            //     System.Console.WriteLine(date);
+            // }
+
+            // // 3. Vols filtrés par destination
+            // var flightsMadrid = fm.GetFlights("Destination", "Madrid");
+            // System.Console.WriteLine("\nFlights to Madrid:");
+            // foreach (var flight in flightsMadrid)
+            // {
+            //     System.Console.WriteLine($"{flight.FlightDate} - {flight.Destination} - {flight.EstimatedDuration} min");
+            // }
+             
+            //Partie 3
+            //I.
+            //2.
+            fm.ShowFlightDetails(TestData.BoingPlane);
+
+
+
+            }
+            
+            
+    }
+}
