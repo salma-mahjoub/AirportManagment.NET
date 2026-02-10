@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/salmamahjoub/Documents/ArchiSI/AM/AM.Console/AM.Console.csproj",
+      "projectUniqueName": "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.Console/AM.Console.csproj",
       "projectName": "AM.Console",
-      "projectPath": "/Users/salmamahjoub/Documents/ArchiSI/AM/AM.Console/AM.Console.csproj",
+      "projectPath": "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.Console/AM.Console.csproj",
       "packagesPath": "/Users/salmamahjoub/.nuget/packages/",
-      "outputPath": "/Users/salmamahjoub/Documents/ArchiSI/AM/AM.Console/obj/",
+      "outputPath": "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.Console/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/salmamahjoub/.nuget/NuGet/NuGet.Config"
@@ -51,8 +51,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/AM.ApplicationCore.csproj": {
-              "projectPath": "/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/AM.ApplicationCore.csproj"
+            "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.ApplicationCore/AM.ApplicationCore.csproj": {
+              "projectPath": "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.ApplicationCore/AM.ApplicationCore.csproj"
             }
           }
         }

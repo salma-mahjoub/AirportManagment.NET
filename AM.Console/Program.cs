@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
 
@@ -88,12 +89,25 @@ namespace AM.UI.Console
             //Partie 3
             //I.
             //2.
-            fm.ShowFlightDetails(TestData.BoingPlane);
+            //fm.ShowFlightDetails(TestData.BoingPlane);
 
-
-
-            }
+            //3.
+            // DateTime startDate = new DateTime(2022, 1, 1);
+            // int programmedFlights = fm.ProgrammedFlightNumber(startDate);
+            // System.Console.WriteLine($"\nNumber of programmed flights after {startDate.ToShortDateString()}: {programmedFlights}");
             
+            //6.
+            // foreach(var p in fm.SeniorTravellers(TestData.flight1))
+            // {
+            //     System.Console.WriteLine(p);
+
+            // }
+            //III.
+            Passenger passenger = new Passenger { FirstName = "salma", LastName = "mahjoub" };
+            passenger.UpperFullName();
+            System.Console.WriteLine($"\nPassenger full name in uppercase: {passenger.FirstName} {passenger.LastName}");
+        }
             
+        
     }
 }
