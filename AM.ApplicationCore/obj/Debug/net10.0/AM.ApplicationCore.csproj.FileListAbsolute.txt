@@ -1,14 +1,3 @@
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.deps.json
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.dll
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.pdb
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.AssemblyInfoInputs.cache
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.AssemblyInfo.cs
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.csproj.CoreCompileInputs.cache
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.dll
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/refint/AM.ApplicationCore.dll
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/AM.ApplicationCore.pdb
-/Users/salmamahjoub/Documents/ArchiSI/AM/AM.ApplicationCore/obj/Debug/net10.0/ref/AM.ApplicationCore.dll
 /Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.deps.json
 /Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.dll
 /Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.ApplicationCore/bin/Debug/net10.0/AM.ApplicationCore.pdb
