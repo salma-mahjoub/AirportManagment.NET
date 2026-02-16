@@ -134,6 +134,30 @@ namespace AM.ApplicationCore.Services
             // return query.Take(3);
             return flight.Passengers.OfType<Traveller>().OrderBy(p => p.BirthDate).Take(3);
         }
+        //Q4
+        public double DurationAverage(string destination)
+        {
+            return Flights
+                .Where(f => f.Destination == destination)
+                .Select(f => f.EstimatedDuration)
+                .DefaultIfEmpty(0)  
+                .Average();
+        }
+        //Q5
+        public List<Flight> OrderedDurationFlights()
+        {
+            return Flights
+                .OrderByDescending(f => f.EstimatedDuration)
+                .ToList();
+        }
+        //Q7
+        public IEnumerable<IGrouping<string, Flight>> DestinationGroupedFlights()
+        {
+            return Flights.GroupBy(f => f.Destination);
+        }
+
+
+
 
 
 

@@ -95,17 +95,50 @@ namespace AM.UI.Console
             // DateTime startDate = new DateTime(2022, 1, 1);
             // int programmedFlights = fm.ProgrammedFlightNumber(startDate);
             // System.Console.WriteLine($"\nNumber of programmed flights after {startDate.ToShortDateString()}: {programmedFlights}");
+
+            // 4.
+            // string destination = "Lisbonne";
+            // double averageDuration = fm.DurationAverage(destination);
+            // System.Console.WriteLine($"\nLa durée moyenne des vols vers {destination} est de {averageDuration} minutes.");
+
+            //5.
+            // var orderedFlights = fm.OrderedDurationFlights();
+
+            // System.Console.WriteLine("\nVols ordonnés par durée estimée (du plus long au plus court) :");
+
+            // foreach (var flight in orderedFlights)
+            // {
+            //     System.Console.WriteLine($"Destination: {flight.Destination} | Date: {flight.FlightDate:dd/MM/yyyy} | Durée: {flight.EstimatedDuration} min");
+            // }
             
             //6.
             // foreach(var p in fm.SeniorTravellers(TestData.flight1))
             // {
             //     System.Console.WriteLine(p);
 
+            //Q7.
+            var groupedFlights = fm.DestinationGroupedFlights();
+
+            System.Console.WriteLine("\nVols groupés par destination :");
+
+            foreach (var group in groupedFlights)
+            {
+                System.Console.WriteLine($"\nDestination : {group.Key}");
+
+                foreach (var flight in group)
+                {
+                    System.Console.WriteLine($"Décollage {flight.FlightDate:dd/MM/yyyy HH:mm} : {flight.EstimatedDuration} min");
+                }
+            }
+
+
             // }
             //III.
-            Passenger passenger = new Passenger { FirstName = "salma", LastName = "mahjoub" };
-            passenger.UpperFullName();
-            System.Console.WriteLine($"\nPassenger full name in uppercase: {passenger.FirstName} {passenger.LastName}");
+            // Passenger passenger = new Passenger { FirstName = "salma", LastName = "mahjoub" };
+            // passenger.UpperFullName();
+            // System.Console.WriteLine($"\nPassenger full name in uppercase: {passenger.FirstName} {passenger.LastName}");
+
+
         }
             
         

@@ -7,7 +7,6 @@ namespace AM.ApplicationCore.Interfaces
     {
         public List<Flight> Flights { get; set; }
 
-        // Signature des méthodes (à compléter plus tard)
         public IEnumerable<DateTime> GetFlightDates(string destination);
         public List<Flight> GetFlights(string filterType, string filterValue);
         public void ShowFlightDetails(Plane plane);
@@ -15,6 +14,16 @@ namespace AM.ApplicationCore.Interfaces
         public int ProgrammedFlightNumber(DateTime startDate);
 
         public IEnumerable<Traveller> SeniorTravellers(Flight flight);
+
+        //Q4
+        public double DurationAverage(string destination);
+
+        //Q5
+        public List<Flight> OrderedDurationFlights();
+
+        //Q7
+        public IEnumerable<IGrouping<string, Flight>> DestinationGroupedFlights();
+
 
         
     }
