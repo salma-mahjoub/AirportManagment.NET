@@ -4,6 +4,7 @@ using AM.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AMContext))]
-    partial class AMContextModelSnapshot : ModelSnapshot
+    [Migration("20260223081955_AnnoatationsAdd")]
+    partial class AnnoatationsAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,17 +128,17 @@ namespace AM.Infrastructure.Migrations
 
             modelBuilder.Entity("FlightPassenger", b =>
                 {
-                    b.Property<int>("FlightsFlightId")
+                    b.Property<int>("FlightId")
                         .HasColumnType("int");
 
-                    b.Property<string>("PassengersPassportNumber")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("varchar(7)");
 
-                    b.HasKey("FlightsFlightId", "PassengersPassportNumber");
+                    b.HasKey("FlightId", "PassengerId");
 
-                    b.HasIndex("PassengersPassportNumber");
+                    b.HasIndex("PassengerId");
 
-                    b.ToTable("Reservation", (string)null);
+                    b.ToTable("FlightPassengers", (string)null);
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Staff", b =>
@@ -185,13 +188,13 @@ namespace AM.Infrastructure.Migrations
                 {
                     b.HasOne("AM.ApplicationCore.Domain.Flight", null)
                         .WithMany()
-                        .HasForeignKey("FlightsFlightId")
+                        .HasForeignKey("FlightId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("AM.ApplicationCore.Domain.Passenger", null)
                         .WithMany()
-                        .HasForeignKey("PassengersPassportNumber")
+                        .HasForeignKey("PassengerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

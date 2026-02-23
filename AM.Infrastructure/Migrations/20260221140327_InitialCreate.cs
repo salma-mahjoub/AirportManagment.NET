@@ -19,15 +19,13 @@ namespace AM.Infrastructure.Migrations
                 name: "Passengers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "longtext", nullable: false)
+                    PassportNumber = table.Column<string>(type: "varchar(7)", maxLength: 7, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FirstName = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     LastName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BirthDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    PassportNumber = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     EmailAddress = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     TelNumber = table.Column<int>(type: "int", nullable: false),
@@ -36,7 +34,7 @@ namespace AM.Infrastructure.Migrations
                     EmploymentDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Function = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Salary = table.Column<double>(type: "double", nullable: true),
+                    Salary = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     Nationality = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     HealthInformation = table.Column<string>(type: "longtext", nullable: true)
@@ -44,7 +42,7 @@ namespace AM.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Passengers", x => x.Id);
+                    table.PrimaryKey("PK_Passengers", x => x.PassportNumber);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -77,7 +75,9 @@ namespace AM.Infrastructure.Migrations
                     FlightDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     EffectiveArrival = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     EstimatedDuration = table.Column<int>(type: "int", nullable: false),
-                    PlaneId = table.Column<int>(type: "int", nullable: false)
+                    PlaneId = table.Column<int>(type: "int", nullable: false),
+                    AirlineLogo = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -96,11 +96,12 @@ namespace AM.Infrastructure.Migrations
                 columns: table => new
                 {
                     FlightsFlightId = table.Column<int>(type: "int", nullable: false),
-                    PassengersId = table.Column<int>(type: "int", nullable: false)
+                    PassengersPassportNumber = table.Column<string>(type: "varchar(7)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersId });
+                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersPassportNumber });
                     table.ForeignKey(
                         name: "FK_FlightPassenger_Flights_FlightsFlightId",
                         column: x => x.FlightsFlightId,
@@ -108,18 +109,18 @@ namespace AM.Infrastructure.Migrations
                         principalColumn: "FlightId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FlightPassenger_Passengers_PassengersId",
-                        column: x => x.PassengersId,
+                        name: "FK_FlightPassenger_Passengers_PassengersPassportNumber",
+                        column: x => x.PassengersPassportNumber,
                         principalTable: "Passengers",
-                        principalColumn: "Id",
+                        principalColumn: "PassportNumber",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlightPassenger_PassengersId",
+                name: "IX_FlightPassenger_PassengersPassportNumber",
                 table: "FlightPassenger",
-                column: "PassengersId");
+                column: "PassengersPassportNumber");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Flights_PlaneId",

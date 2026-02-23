@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace AM.ApplicationCore.Domain
 {
     public class Plane
@@ -13,6 +15,8 @@ namespace AM.ApplicationCore.Domain
         //     this.capacity = capacity;
         // }
         public int PlaneId { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Capacity must be a positive number")]
         public int Capacity { get; set; }
         public DateTime ManufactureDate { get; set; }
         public PlaneType PlaneType { get; set; }

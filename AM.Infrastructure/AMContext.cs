@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configurations;
 
 namespace AM.Infrastructure.Data
 {
@@ -15,6 +16,27 @@ namespace AM.Infrastructure.Data
         {
             var connectionString = "server=localhost;port=3306;database=AirportManagementDB;user=root;password=";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        }
+        //Fluent API configurations
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Appel aux configurations
+            //1ère méthode 
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+
+            
+
+        }
+        //Préconvention : appliquer la configuration à toutes les propriétés de type DateTime
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            // Appliquer le type SQL "date" à toutes les propriétés DateTime
+            configurationBuilder.Properties<DateTime>()
+                                .HaveColumnType("date");
         }
     }
 }

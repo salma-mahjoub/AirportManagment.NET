@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AM.ApplicationCore.Domain
 {
@@ -6,6 +8,7 @@ namespace AM.ApplicationCore.Domain
     {
         public DateTime EmploymentDate { get; set; }
         public string Function { get; set; }
+        [DataType(DataType.Currency)]
         public double Salary { get; set; }
         public override string ToString()
         {

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AM.ApplicationCore.Domain
 {
@@ -10,7 +11,8 @@ namespace AM.ApplicationCore.Domain
         public DateTime FlightDate { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
-
+        public int PlaneId { get; set; }
+        [ForeignKey("PlaneId")]
         public Plane Plane { get; set; }
 
         public ICollection<Passenger> Passengers { get; set; }
