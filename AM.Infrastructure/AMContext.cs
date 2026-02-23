@@ -34,6 +34,7 @@ namespace AM.Infrastructure.Data
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
+            base.ConfigureConventions(configurationBuilder);
             // Appliquer le type SQL "date" à toutes les propriétés DateTime
             configurationBuilder.Properties<DateTime>()
                                 .HaveColumnType("date");
