@@ -1,3 +1,5 @@
+using AM.ApplicationCore.Domain;
+
 namespace AM.ApplicationCore.Domain
 {
     public class Traveller : Passenger
@@ -18,4 +20,9 @@ namespace AM.ApplicationCore.Domain
     }
 
     
+}
+public class Traveller : Passenger
+{
+    public string Nationality { get; set; }
+    public string HealthInformation { get; set; }       
 }
