@@ -27,6 +27,17 @@ namespace AM.Infrastructure.Data
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
 
+            //2ème méthode : TPH (Table Per Hierarchy) pour la hiérarchie Passenger -> Traveller, Staff
+            // modelBuilder.Entity<Passenger>().HasDiscriminator<int>("PassengerType")
+            //     .HasValue<Passenger>(0)
+            //     .HasValue<Traveller>(1)
+            //     .HasValue<Staff>(2);
+
+            //TPT (Table Per Type) pour la hiérarchie Passenger -> Traveller, Staff
+            modelBuilder.Entity<Passenger>().ToTable("Passengers");
+            modelBuilder.Entity<Traveller>().ToTable("Travellers");
+            modelBuilder.Entity<Staff>().ToTable("Staffs");
+
             
 
         }
