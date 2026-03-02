@@ -13,11 +13,10 @@ namespace AM.ApplicationCore.Domain
         public int EstimatedDuration { get; set; }
         public int PlaneId { get; set; }
         [ForeignKey("PlaneId")]
-        public Plane Plane { get; set; }
+        public virtual Plane Plane { get; set; }
+        public virtual ICollection<Passenger> Passengers { get; set; }
 
-        public ICollection<Passenger> Passengers { get; set; }
-
-public string AirlineLogo { get; set; } 
+        public string AirlineLogo { get; set; } 
         public override string ToString()
         {
             return $"FlightId: {FlightId}, Departure: {Departure}, Destination: {Destination}, FlightDate: {FlightDate}, EffectiveArrival: {EffectiveArrival}, EstimatedDuration: {EstimatedDuration}, Plane: [{Plane}]";

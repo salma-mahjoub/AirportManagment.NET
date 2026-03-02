@@ -22,7 +22,9 @@ namespace AM.ApplicationCore.Domain
         [RegularExpression(@"^\d{8}$", ErrorMessage = "TelNumber must contain exactly 8 digits")] // ou "[0-9]{8}$"
         public int TelNumber { get; set; }
 
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
+
+        public virtual ICollection<ReservationTicket> Reservations { get; set; }
 
         public override string ToString()
         {

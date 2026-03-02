@@ -21,7 +21,7 @@ namespace AM.ApplicationCore.Domain
         public DateTime ManufactureDate { get; set; }
         public PlaneType PlaneType { get; set; }
 
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
 
         // Constructeur paramétré (Q8)
         public Plane(PlaneType pt, int capacity, DateTime date)

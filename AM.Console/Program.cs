@@ -2,6 +2,8 @@
 using System.Security.Cryptography.X509Certificates;
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AM.UI.Console
 {
@@ -117,19 +119,19 @@ namespace AM.UI.Console
             //     System.Console.WriteLine(p);
 
             //Q7.
-            var groupedFlights = fm.DestinationGroupedFlights();
+            // var groupedFlights = fm.DestinationGroupedFlights();
 
-            System.Console.WriteLine("\nVols groupés par destination :");
+            // System.Console.WriteLine("\nVols groupés par destination :");
 
-            foreach (var group in groupedFlights)
-            {
-                System.Console.WriteLine($"\nDestination : {group.Key}");
+            // foreach (var group in groupedFlights)
+            // {
+            //     System.Console.WriteLine($"\nDestination : {group.Key}");
 
-                foreach (var flight in group)
-                {
-                    System.Console.WriteLine($"Décollage {flight.FlightDate:dd/MM/yyyy HH:mm} : {flight.EstimatedDuration} min");
-                }
-            }
+            //     foreach (var flight in group)
+            //     {
+            //         System.Console.WriteLine($"Décollage {flight.FlightDate:dd/MM/yyyy HH:mm} : {flight.EstimatedDuration} min");
+            //     }
+            // }
 
 
             // }
@@ -137,6 +139,18 @@ namespace AM.UI.Console
             // Passenger passenger = new Passenger { FirstName = "salma", LastName = "mahjoub" };
             // passenger.UpperFullName();
             // System.Console.WriteLine($"\nPassenger full name in uppercase: {passenger.FirstName} {passenger.LastName}");
+
+            //Partie 5
+            AMContext context = new AMContext();
+            //context.Planes.Add(TestData.Airbusplane);
+            //context.Flights.Add(TestData.flight2);
+            //context.SaveChanges();
+
+            foreach (var flight in context.Flights)
+            {
+                System.Console.WriteLine($"Flight to {flight.Destination} Capacity: {flight.Plane.Capacity}");
+            }
+        
 
 
         }

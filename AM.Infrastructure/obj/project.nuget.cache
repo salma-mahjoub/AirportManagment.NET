@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Olq+JCBBErA=",
+  "dgSpecHash": "+iPR47qO1Ho=",
   "success": true,
   "projectFilePath": "/Users/salmamahjoub/Documents/GitHub/AirportManagment.NET/AM.Infrastructure/AM.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/Users/salmamahjoub/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",
@@ -18,6 +19,7 @@
     "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.0/microsoft.entityframeworkcore.analyzers.9.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.design/9.0.0/microsoft.entityframeworkcore.design.9.0.0.nupkg.sha512",
+    "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.proxies/9.0.0/microsoft.entityframeworkcore.proxies.9.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.0/microsoft.entityframeworkcore.relational.9.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.entityframeworkcore.tools/9.0.0/microsoft.entityframeworkcore.tools.9.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.0/microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
@@ -39,7 +41,8 @@
     "/Users/salmamahjoub/.nuget/packages/system.composition.convention/7.0.0/system.composition.convention.7.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/system.composition.hosting/7.0.0/system.composition.hosting.7.0.0.nupkg.sha512",
     "/Users/salmamahjoub/.nuget/packages/system.composition.runtime/7.0.0/system.composition.runtime.7.0.0.nupkg.sha512",
-    "/Users/salmamahjoub/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512"
+    "/Users/salmamahjoub/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512",
+    "/Users/salmamahjoub/.nuget/packages/system.diagnostics.eventlog/6.0.0/system.diagnostics.eventlog.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

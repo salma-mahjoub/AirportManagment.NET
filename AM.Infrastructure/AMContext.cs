@@ -6,16 +6,21 @@ namespace AM.Infrastructure.Data
 {
     public class AMContext : DbContext
     {
+        //Entities : DBSET
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Plane> Planes { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Traveller> Travellers { get; set; }
 
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<ReservationTicket> ReservationTickets { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "server=localhost;port=3306;database=AirportManagementDB;user=root;password=";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            optionsBuilder.UseLazyLoadingProxies(); // activation Lazy Loading
         }
         //Fluent API configurations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,6 +42,10 @@ namespace AM.Infrastructure.Data
             modelBuilder.Entity<Passenger>().ToTable("Passengers");
             modelBuilder.Entity<Traveller>().ToTable("Travellers");
             modelBuilder.Entity<Staff>().ToTable("Staffs");
+
+            //COnfiguration de la clé primaire de la table de jointure ReservationTicket
+            modelBuilder.Entity<ReservationTicket>()
+                .HasKey(rt => new { rt.FkPassenger, rt.FkTicket , rt.DateReservation}); // Clé primaire composée
 
             
 
